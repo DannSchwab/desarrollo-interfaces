@@ -156,6 +156,22 @@ public class D_I_DanielSchwab_MiniPaint extends JFrame {
 		JButton bGrosor = new JButton("Ancho");
 		bGrosor.addActionListener(oyenteGrosor);
 		barra.add(bGrosor);
+		barra.addSeparator();
+
+		JButton bLimpiar = new JButton("Limpiar");
+		bLimpiar.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				int respuesta = JOptionPane.showConfirmDialog(contentPane, "¿Borrar todo el dibujo?", "Limpiar",
+						JOptionPane.YES_NO_OPTION);
+				if (respuesta == JOptionPane.YES_OPTION) {
+					// Una imagen nueva está vacía, así que el lienzo queda en blanco
+					imagen = new BufferedImage(2000, 1500, BufferedImage.TYPE_INT_ARGB);
+					lienzo.repaint();
+				}
+			}
+		});
+		barra.add(bLimpiar);
 
 		// ---------- RATÓN ----------
 		lienzo.addMouseListener(new MouseListener() {
