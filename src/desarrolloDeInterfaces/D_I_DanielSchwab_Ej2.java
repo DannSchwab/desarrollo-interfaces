@@ -1,4 +1,4 @@
-package test1;
+package desarrolloDeInterfaces;
 
 import java.awt.EventQueue;
 
